@@ -10,7 +10,7 @@
 #include <fstream>
 #include "work_database.h"
 using namespace std;
-int choice_str; int wage_F_workers; int c_for_sls; char countin; int ccounn;//счетчик для номера записи
+int choice_str; int wage_F_workers; int c_for_sls; char countin;
 int counts; // счетчик
 int q_purchase = 0;//переменная для работы функции void buy_sell()
 void start(); void blink(); void data_reg(); void t_chief(); void supply(); void data_read(); //Описание функций для работы с ними
@@ -862,8 +862,6 @@ void data_reg()
 
     ofstream work;
     work.open("test.txt",ios_base::binary | ios_base::app);
-    ccounn++;//номер записи ++
-    work << "Номер записи |" << ccounn << "|\n" ;
     work << "====================================\n";
     work << "Данные о продавцах: " << endl;
     for(unsigned int i_0 = 0; i_0 < Seller.name_s.size(); i_0++)

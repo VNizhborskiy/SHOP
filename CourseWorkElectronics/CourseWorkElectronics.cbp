@@ -33,6 +33,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="work_database.cpp" />
+		<Unit filename="work_database.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
