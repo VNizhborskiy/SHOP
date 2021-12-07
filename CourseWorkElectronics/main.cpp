@@ -496,9 +496,9 @@ void blink()
         system("COLOR E4");
         system("COLOR F1");
         system("COLOR E4");
-        Sleep(900);
+        Sleep(800);
         system("cls");
-        Sleep(900);
+        Sleep(800);
     }
 }
 
