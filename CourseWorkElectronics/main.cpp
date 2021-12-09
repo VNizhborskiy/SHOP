@@ -999,15 +999,105 @@ void data_read()
     }
 }
 
+class SHOP
+{
+public:
+    void blink()
+    {
+        for(int i_0 = 0; i_0 < 3; i_0++)
+        {
+            for(int i_0 = 0; i_0 < 41; i_0++)
+            {
+                cout << "                  "; // Сдвиг в сторону
+            }
+            cout << " Вас приветствует магазин Электроники C++      \n";
+            for(int i_0 = 0; i_0 < 10; i_0++)
+            {
+                cout << endl; // Сдвиг ввверх
+            }
+            system("COLOR F1");
+            system("COLOR E4");
+            system("COLOR F1");
+            system("COLOR E4");
+            Sleep(800);
+            system("cls");
+            Sleep(800);
+        }
+    }
+    void start()
+    {
+        system("COLOR F1");
+        cout << "                                 Магазин Электроники C++             \n";
+        cout << "                           _____________        _____________        \n";
+        cout << "                           |           |  МЕНЮ  |           |        \n"
+                "                        ---|           |---||---|           |---     \n"
+                "                           |___________|   ||   |___________|        \n"
+                "                   ========================||========================\n"
+                "                   ========================||========================\n"
+                "                   ~~~~~~~~~I=U/R~~~~~~~~~ || ~~~~~~~~~I=U/R~~~~~~~~~\n\n";
+        cout << "                   Нажмите 1, что бы промоделировать процесс продажи/покупки.\n";
+        cout << "                   Нажмите 2, что бы открыть функии директора магазина.\n";
+        cout << "                   Нажмите 3, что бы записать/посмотреть бинарный файл.\n";
+        cout << "                   Нажмите 4, что бы увидеть состояние магазина.\n";
+        cout << "                   Нажмите 5, что бы закрыть программу.\n";
+        cout << "Ваш выбор: \n";
+        cin >> choice_str;
+        switch(choice_str)
+        {
+            case  1:system("cls");
+                    buy_sell();
+                    break;
+            case 2: system("cls");
+                    t_chief();
+                    break;
+            case  3:system("cls");
+                    cout << "1. Записать базу даных в бинарный файл. \n";
+                    cout << "2. Прочитать базу даных с бинарного файла. \n"
+                            "3. Выйти в меню. \n";
+                    cout << "Ваш выбор: \n";
+                    cin >> choice_str;
+                    switch(choice_str)
+                    {
+                        case 1: if(Item.quantity_day < 1)
+                                {
+                                    cout << "Сначала сделайте поставку товара, потом записывайте данные.\n";
+                                    start();
+                                }
+                                data_reg();
+                                break;
+                        case 2: data_read();
+                                break;
+                        case 3: system("cls");
+                                start();
+                                break;
+                        default:system("cls");
+                                cout << "Ошибка. Выберите 1 или 2. \n";
+                                start();
+                    }
+                    break;
+            case  4:{system("cls");
+                    show_st_shop();}
+                    break;
+            case  5:{system("cls");
+                    cout << "\n\nПрограмма успешно завершилась. Нажмите Enter, что бы выйти из программы.\n";
+                    exit(0);}
+                    break;
+            default:{system("cls");
+                    cout << "Ошибка. Выберите 1,2,3,4 или 5. \n";
+                    start();}
+        }
+    }
+}; SHOP Shop;
+
 int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     system("COLOR F1");
     srand(time(NULL));
-    blink();
+    Shop.blink();
     system("COLOR F1");
-    start();
+    Shop.start();
 
     return 0;
 }
