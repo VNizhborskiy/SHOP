@@ -1019,9 +1019,9 @@ public:
             system("COLOR E4");
             system("COLOR F1");
             system("COLOR E4");
-            Sleep(800);
+            Sleep(700);
             system("cls");
-            Sleep(800);
+            Sleep(700);
         }
     }
     void start()
